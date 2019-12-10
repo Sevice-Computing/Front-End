@@ -1,15 +1,28 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
-import router from './router'
+import Vue from "vue";
+import App from "./App.vue";
+import store from "./store";
+import router from "./router/index.js";
 
-Vue.config.productionTip = false
+// import VueQuillEditor from "vue-quill-editor"
+// Vue.use(VueQuillEditor);
 
-/* eslint-disable no-new */
+
+// import ElementUI from "element-ui";
+// import "element-ui/lib/theme-chalk/index.css";
+// Vue.use(ElementUI);
+
+
+// // 引用API文件
+// import api from "./api/http.js";
+// // 将API方法绑定到全局
+// Vue.prototype.$api = api;
+
+Vue.config.productionTip = false;
+
+
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
-})
+    store,
+    router,
+  render: h => h(App)
+}).$mount("#app");
+
